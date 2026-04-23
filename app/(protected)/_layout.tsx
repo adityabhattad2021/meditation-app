@@ -1,5 +1,6 @@
 import { useAuth } from '@clerk/expo'
 import { Redirect, Slot } from 'expo-router'
+import { ConversationProvider } from '@elevenlabs/react-native';
 
 export default function Layout() {
   const { isSignedIn, isLoaded } = useAuth()
@@ -12,5 +13,9 @@ export default function Layout() {
     return <Redirect href="/(auth)/sign-in" />
   }
 
-  return <Slot />
+  return (
+    <ConversationProvider>
+        <Slot/>
+    </ConversationProvider>
+  )
 }
