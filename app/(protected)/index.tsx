@@ -1,7 +1,7 @@
 import { Gradient } from '@/components/gradient'
-import { Show, useUser } from '@clerk/expo'
-import { useClerk } from '@clerk/expo'
-import { Text, View, Pressable, StyleSheet } from 'react-native'
+import { Show, useClerk, useUser } from '@clerk/expo'
+import { Link } from 'expo-router'
+import { Pressable, StyleSheet, Text, View } from 'react-native'
 
 export default function Page() {
   const { user } = useUser()
@@ -9,7 +9,7 @@ export default function Page() {
 
   return (
     <View style={styles.container}>
-      <Gradient position='top' isSpeaking={false}/ >
+      <Gradient position='top' isSpeaking={false} />
       <Text style={styles.title}>Welcome!</Text>
       <Show when="signed-in">
         <Text>Hello {user?.emailAddresses[0].emailAddress}</Text>
@@ -17,7 +17,11 @@ export default function Page() {
           <Text style={styles.buttonText}>Sign out</Text>
         </Pressable>
       </Show>
-
+      <Link href="/session" asChild>
+        <Pressable style={{ padding: 20, backgroundColor: '#4dbeff' }}>
+          <Text style={{ color: 'white' }}>Begin Meditation</Text>
+        </Pressable>
+      </Link>
     </View>
   )
 }

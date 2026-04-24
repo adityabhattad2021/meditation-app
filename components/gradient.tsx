@@ -181,9 +181,9 @@ export function Gradient({
 }
 
 const Colors = {
+    mediumBlue: "#58b9e3",
+    lightBlue: "#4dbeff",
     teal: "#5ac8fa",
-    lightBlue: "#4da6ff",
-    mediumBlue: "#007aff",
     iceBlue: "#e6f3ff",
     white:"#ffffff",
 }
