@@ -9,7 +9,7 @@ const {
 } = Dimensions.get("screen");
 
 const VISUAL_CONFIG = {
-    blur: 9,
+    blur: 5,
     center: {
         x: width/2,
         y: height/2
@@ -181,9 +181,9 @@ export function Gradient({
 }
 
 const Colors = {
-    white: "#ffffff",
     teal: "#5ac8fa",
-    mediumBlue: "#007aff",
     lightBlue: "#4da6ff",
-    iceBlue: "#e6f3ff"
+    mediumBlue: "#007aff",
+    iceBlue: "#e6f3ff",
+    white:"#ffffff",
 }

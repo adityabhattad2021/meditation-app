@@ -1,6 +1,6 @@
+import { Gradient } from '@/components/gradient'
 import { Show, useUser } from '@clerk/expo'
 import { useClerk } from '@clerk/expo'
-import { Link } from 'expo-router'
 import { Text, View, Pressable, StyleSheet } from 'react-native'
 
 export default function Page() {
@@ -9,6 +9,7 @@ export default function Page() {
 
   return (
     <View style={styles.container}>
+      <Gradient position='top' isSpeaking={false}/ >
       <Text style={styles.title}>Welcome!</Text>
       <Show when="signed-in">
         <Text>Hello {user?.emailAddresses[0].emailAddress}</Text>
@@ -16,6 +17,7 @@ export default function Page() {
           <Text style={styles.buttonText}>Sign out</Text>
         </Pressable>
       </Show>
+
     </View>
   )
 }
